@@ -1,0 +1,14 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Stage 3: Synthetic Dirichlet Control (Lab Baseline)
+# ─────────────────────────────────────────────────────────────────────────────
+# Take IEEE-CIS only and partition into 3 synthetic clients via
+# Dirichlet distribution (α=0.5) on the label.
+# Replicates standard FL paper setups for direct comparison.
+
+stage:
+  name: "stage3_dirichlet"
+  description: "Synthetic Dirichlet split of IEEE-CIS into 3 clients (α=0.5)"
+  split_strategy: "dirichlet"
+  source_dataset: "ieee_cis"
+  num_clients: 3
+  alpha: 0.5

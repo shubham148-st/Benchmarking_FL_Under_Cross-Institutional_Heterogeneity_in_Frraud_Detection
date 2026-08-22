@@ -1,0 +1,12 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Stage 1: Natural Domain Heterogeneity
+# ─────────────────────────────────────────────────────────────────────────────
+# Each dataset = one client with its natural fraud rate.
+#   Client 0 = IEEE-CIS  (~3.5% fraud)
+#   Client 1 = Feedzai BAF (~1.1% fraud)
+#   Client 2 = PaySim    (~0.13% fraud)
+
+stage:
+  name: "stage1_natural"
+  description: "Natural domain heterogeneity with real class imbalances"
+  split_strategy: "natural"

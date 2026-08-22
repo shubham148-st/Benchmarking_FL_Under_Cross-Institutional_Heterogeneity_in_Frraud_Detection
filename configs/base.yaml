@@ -1,0 +1,48 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Base configuration for FL Fraud Detection Benchmark
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Model architecture
+model:
+  input_dim: 8              # Number of harmonized features (see FEATURE_COLUMNS)
+  hidden_dims: [256, 128, 64]
+  dropout: 0.2
+
+# Local training
+training:
+  local_epochs: 5
+  batch_size: 256
+  learning_rate: 0.001
+  optimizer: adam
+
+# FL simulation
+fl:
+  num_rounds: 50
+  num_clients: 3
+  fraction_fit: 1.0         # All clients participate each round
+  fraction_evaluate: 1.0
+  max_samples_per_client: 500000  # Cap per-client train samples (stratified subsample)
+
+# Algorithm-specific hyperparameters
+fedprox:
+  mu: 0.1                   # Proximal term weight (grid: 0.01, 0.1, 1.0)
+
+scaffold:
+  # No extra hyperparams — uses training.learning_rate for step size
+
+ditto:
+  lambda_reg: 0.1           # Personalization regularization strength
+  personal_epochs: 5        # Epochs for personalized model per round
+
+# Evaluation
+eval:
+  convergence_window: 10    # Rounds to check for convergence
+  convergence_threshold: 0.005  # Max AUC-PR variance for convergence
+
+# Experiment tracking
+logging:
+  use_wandb: false           # Set to true to enable W&B
+  project_name: "fl-fraud-benchmark"
+
+# Reproducibility
+seed: 42

@@ -1,0 +1,12 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Stage 2: Base-Rate Balanced (Class Imbalance Control)
+# ─────────────────────────────────────────────────────────────────────────────
+# Same client assignment as Stage 1, but downsample legitimate class
+# so every client has an identical fraud rate of 1.0%.
+# Remaining performance differences → attributable to domain/feature shift.
+
+stage:
+  name: "stage2_balanced"
+  description: "Base-rate balanced — all clients forced to 1.0% fraud rate"
+  split_strategy: "balanced"
+  target_fraud_rate: 0.01
