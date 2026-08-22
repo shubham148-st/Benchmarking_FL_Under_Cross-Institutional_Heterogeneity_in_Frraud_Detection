@@ -1,0 +1,28 @@
+# Data and Caching
+data/*
+*.pkl
+
+# Output Results and Logs
+results/*
+*.log
+!smoke_test.log
+
+# Python Artifacts and Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDEs and OS specific
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
