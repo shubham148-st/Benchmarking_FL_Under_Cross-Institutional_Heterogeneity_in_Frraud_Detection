@@ -161,9 +161,12 @@ def save_results_csv(results: list[dict], path: str | Path) -> None:
         logger.warning("No results to save.")
         return
 
-    with open(path, "w", newline="") as f:
+    file_exists = path.exists() and path.stat().st_size > 0
+
+    with open(path, "a", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=results[0].keys())
-        writer.writeheader()
+        if not file_exists:
+            writer.writeheader()
         writer.writerows(results)
 
     logger.info(f"Results saved to {path}")

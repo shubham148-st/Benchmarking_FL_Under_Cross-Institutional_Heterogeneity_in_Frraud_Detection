@@ -1,0 +1,1 @@
+python main_simulation.py --config configs/stage1_natural.yaml --algorithm fedavgpython main_simulation.py --config configs/stage1_natural.yaml --algorithm fedavg
