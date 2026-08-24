@@ -3,7 +3,7 @@ data/*
 *.pkl
 
 # Output Results and Logs
-results/*
+results/history/*
 *.log
 !smoke_test.log
 
