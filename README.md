@@ -65,9 +65,29 @@ fl_fraud_benchmark/
 │   ├── fl_core/              # Flower client, strategies, server
 │   └── utils/                # Metrics & logging
 ├── configs/                  # YAML configurations
+├── results/                  # Generated CSV logs and metrics
+├── figures/                  # Generated IEEE-style plots
 ├── main_simulation.py        # CLI entry point
+├── plot_results.py           # IEEE figure generator
 └── requirements.txt          # Dependencies (Python 3.10)
 ```
+
+## Visualization (IEEE-Style Figures)
+
+Generate publication-ready plots (PNG) from your simulation results:
+
+```bash
+# Generate all plots (bar charts, convergence curves, heatmaps)
+python plot_results.py
+
+# Generate plots for a specific stage
+python plot_results.py --stage stage1_natural
+
+# Only generate convergence plots
+python plot_results.py --history-only
+```
+
+Plots and LaTeX tables are saved to the `figures/` directory.
 
 ## CLI Reference
 
