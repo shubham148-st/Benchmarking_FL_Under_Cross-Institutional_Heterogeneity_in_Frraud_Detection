@@ -151,7 +151,7 @@ def load_results(results_dir: Path) -> dict[str, pd.DataFrame]:
 def load_histories(results_dir: Path) -> dict[str, pd.DataFrame]:
     """Load all history_*.csv files, keyed by 'stage_algo'."""
     histories = {}
-    for fpath in sorted(results_dir.glob("history_*.csv")):
+    for fpath in sorted(results_dir.rglob("history_*.csv")):
         df = pd.read_csv(fpath)
         if df.empty:
             continue
