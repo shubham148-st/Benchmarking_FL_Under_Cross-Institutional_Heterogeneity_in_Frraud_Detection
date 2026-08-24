@@ -66,6 +66,7 @@ fl_fraud_benchmark/
 │   └── utils/                # Metrics & logging
 ├── configs/                  # YAML configurations
 ├── results/                  # Generated CSV logs and metrics
+│   └── history/              # Detailed per-round metrics (50 rounds)
 ├── figures/                  # Generated IEEE-style plots
 ├── main_simulation.py        # CLI entry point
 ├── plot_results.py           # IEEE figure generator
