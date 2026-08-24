@@ -208,7 +208,7 @@ def run_full_benchmark(
                 history_data.append(row)
                 
             if history_data:
-                output_dir = Path("results")
+                output_dir = Path("results/history")
                 output_dir.mkdir(parents=True, exist_ok=True)
                 history_csv = output_dir / f"history_{stage_name}_{algo}.csv"
                 pd.DataFrame(history_data).to_csv(history_csv, index=False)
